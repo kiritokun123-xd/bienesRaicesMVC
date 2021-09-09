@@ -16,19 +16,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienes Raices</title>
-    <link rel="stylesheet" href="../public/build/css/app.css">
+    <link rel="stylesheet" href="../build/css/app.css">
 <body>
     <header class="header <?php echo $inicio ? 'inicio' : '';?>">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="index.php"><img src="../public/build/img/logo.svg" alt="Logotipo de Bienes Raices"></a>
+                <a href="index.php"><img src="../build/img/logo.svg" alt="Logotipo de Bienes Raices"></a>
 
                 <div class="mobile-menu">
-                    <img src="../public/build/img/barras.svg" alt="icono menu responsive">
+                    <img src="/build/img/barras.svg" alt="icono menu responsive">
                 </div>
 
                 <div class="derecha">
-                    <img src="../public/build/img/dark-mode.svg" alt="modo oscuro" class="dark-mode-boton">
+                    <img src="build/img/dark-mode.svg" alt="modo oscuro" class="dark-mode-boton">
                     <nav class="navegacion">
                         <a href="nosotros.php">Nosotros</a> 
                         <a href="anuncios.php">Anuncios</a> 
@@ -66,6 +66,6 @@
         <p class="copyright">Todos los Derechos Reservados <?php echo date('Y'); ?> &copy;</p>
     </footer>
 
-    <script src="../public/build/js/bundle.min.js"></script>
+    <script src="../build/js/bundle.min.js"></script>
 </body>
 </html>

@@ -28,13 +28,17 @@ class Router{
     }
 
     // mUESTRA UNA VISTA
-    public function render($view){
-        //inicia un almacenamiento en MEMORIA
+    public function render($view, $datos = []){
+
+        foreach($datos as $key=>$value){
+            //Crea variables desde el key : mensaje ----> $mensaje
+            $$key = $value;     
+        }
+        //inicia un almacenamiento en MEMORIA durante un momento
         ob_start();
+
         include __DIR__ . "/views/$view.php";
-
-        $contenido = ob_get_clean();
-
+        $contenido = ob_get_clean();//Limpia el buffer
         include __DIR__ . "/views/layout.php";
 
     }

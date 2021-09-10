@@ -7,10 +7,12 @@ use Model\Propiedad;
 class PropiedadController{
     public static function index(Router $router){
         $propiedades = Propiedad::all();
+        $resultado = null;
 
         $router->render('propiedades/admin',[
             //Datos...
-            'propiedades' => $propiedades
+            'propiedades' => $propiedades,
+            'resultado' => $resultado
         ]);
         
     }

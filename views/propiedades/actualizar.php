@@ -1,5 +1,5 @@
 <main class="contenedor seccion">
-    <h1>Crear</h1>
+    <h1>Actualizar Propiedad</h1>
 
     <?php
         foreach($errores as $error){ ?>
@@ -9,7 +9,7 @@
             <?php
         }
     ?>
-    
+
     <a href="/admin" class="boton boton-verde">Volver</a>
 
     <form class="formulario" method="POST" enctype="multipart/form-data">

@@ -8,15 +8,17 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class PropiedadController{
     public static function index(Router $router){
-        
         $propiedades = Propiedad::all();
+
+        $vendedores = Vendedor::all();
         //MUESTRA MENSAJE CONDICIONAL
         $resultado = $_GET['resultado'] ?? null;
 
         $router->render('propiedades/admin',[
             //Datos...
             'propiedades' => $propiedades,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'vendedores' => $vendedores
         ]);
         
     }
@@ -112,4 +114,22 @@ class PropiedadController{
             'vendedores' => $vendedores
         ]); 
     }
+
+    public static function eliminar(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+            
+
+            if($id){
+                $tipo = $_POST['tipo'];
+                if(validarTipoContenido($tipo)){
+                    $propiedad = Propiedad::find($id);
+                    $propiedad->eliminar();
+                }
+            }
+        }
+    }
+
 }

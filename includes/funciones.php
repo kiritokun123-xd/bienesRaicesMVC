@@ -48,7 +48,7 @@ function mostrarNotificacion($codigo){
         case 2:
             $mensajes = 'Actualizado Correctamente';
             break;
-        case 2:
+        case 3:
             $mensajes = 'Eliminado Correctamente';
             break;
         default:

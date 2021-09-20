@@ -9,7 +9,7 @@
         <?php endif;?>
 
         <a href="/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
-        <a href="/admin/vendedores/crear.php" class="boton boton-verde">Nuevo(a) Vendedor(a)</a>
+        <a href="/vendedores/crear" class="boton boton-verde">Nuevo(a) Vendedor(a)</a>
 
         <h2>Propiedades</h2>
         <table class="propiedades">
@@ -31,12 +31,42 @@
                     <td><img src="/imagenes/<?php echo $propiedad->imagen; ?>" class="imagen-tabla"></td>
                     <td>$ <?php echo $propiedad->precio; ?></td>
                     <td>
-                        <form  method="POST" class="w-100">
+                        <form  method="POST" class="w-100" action="/propiedades/eliminar">
                             <input type="hidden" value="<?php echo $propiedad->id;?>" name="id">
                             <input type="hidden" value="propiedad" name="tipo">
                             <input type="submit" value="Eliminar" class="boton-rojo-block">
                         </form>
                         <a href="propiedades/actualizar?id=<?php echo $propiedad->id;?>" class="boton-amarillo-block">Actualizar</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+        <h2>Vendedores</h2>
+        <table class="propiedades">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach($vendedores as $vendedor) : ?>
+                <tr> <!--//MOSTRAR LOS RESULTADOS-->
+                    <td><?php echo $vendedor->id; ?></td>
+                    <td><?php echo $vendedor->nombre . " " . $vendedor->apellido; ?></td>
+                    <td><?php echo $vendedor->telefono; ?></td>
+                    <td>
+                        <form  method="POST" class="w-100" action="/vendedores/eliminar">
+                            <input type="hidden" value="<?php echo $vendedor->id;?>" name="id">
+                            <input type="hidden" value="vendedor" name="tipo">
+                            <input type="submit" value="Eliminar" class="boton-rojo-block">
+                        </form>
+                        <a href="/vendedores/actualizar?id=<?php echo $vendedor->id;?>" class="boton-amarillo-block">Actualizar</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

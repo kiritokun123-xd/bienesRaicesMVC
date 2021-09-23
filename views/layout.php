@@ -21,7 +21,7 @@
     <header class="header <?php echo $inicio ? 'inicio' : '';?>">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="index.php"><img src="/build/img/logo.svg" alt="Logotipo de Bienes Raices"></a>
+                <a href="/"><img src="/build/img/logo.svg" alt="Logotipo de Bienes Raices"></a>
 
                 <div class="mobile-menu">
                     <img src="/build/img/barras.svg" alt="icono menu responsive">
@@ -56,10 +56,10 @@
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="nosotros.php">Nosotros</a> 
-                <a href="anuncios.php">Anuncios</a> 
-                <a href="blog.php">Blog</a> 
-                <a href="contacto.php">contacto</a> 
+                <a href="/nosotros">Nosotros</a> 
+                <a href="/anuncios">Anuncios</a> 
+                <a href="/blog">Blog</a> 
+                <a href="/contacto">contacto</a> 
             </nav>
         </div>
 
